@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vaid Multispeciality Hospital | Siddhpur</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #f7fbfc;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #087f8c;
+}
+
+.logo span {
+    color: #333;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #087f8c;
+}
+
+.hero {
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #e7f8fa, #ffffff);
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #075e68;
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.buttons a {
+    display: inline-block;
+    padding: 13px 24px;
+    margin-right: 10px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.call-btn {
+    background: #087f8c;
+    color: white;
+}
+
+.whatsapp-btn {
+    background: #25a55f;
+    color: white;
+}
+
+.hero-box {
+    background: white;
+    border-radius: 20px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+}
+
+.hero-box h3 {
+    font-size: 70px;
+}
+
+section {
+    padding: 70px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    color: #075e68;
+    margin-bottom: 40px;
+}
+
+.about {
+    background: white;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.info-box {
+    background: #e9f7f8;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.info-box h3 {
+    color: #075e68;
+    margin-bottom: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #075e68;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+}
+
+.doctor-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+}
+
+.doctor-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #e7f5f6;
+    margin: auto auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+}
+
+.doctor-card h3 {
+    color: #075e68;
+}
+
+.appointment {
+    background: #eaf8f9;
+}
+
+.form {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.form input,
+.form select,
+.form textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #087f8c;
+    color: white;
+    border-radius: 7px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.contact-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+}
+
+.contact-box h3 {
+    color: #075e68;
+    margin-bottom: 15px;
+}
+
+.map {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 12px;
+}
+
+footer {
+    background: #075e68;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Gujarati section */
+.gujarati {
+    background: white;
+}
+
+.gujarati p {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+@media(max-width: 768px) {
+
+    .mobile-menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav a {
+        display: block;
+        margin: 12px 0;
+    }
+
+    .hero-container,
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+
+        <div class="logo">
+            VAID <span>Multispeciality Hospital</span>
+        </div>
+
+        <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+
+        <nav id="nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#doctors">Doctors</a>
+            <a href="#appointment">Appointment</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div>
+            <h1>Vaid Multispeciality Hospital</h1>
+
+            <h2>Siddhpur</h2>
+
+            <p>
+                Quality healthcare and advanced medical services
+                under one roof.
+            </p>
+
+            <div class="buttons">
+
+                <a class="call-btn"
+                   href="tel:9316055188">
+                    📞 Call Now
+                </a>
+
+                <a class="whatsapp-btn"
+                   href="https://wa.me/919316055188"
+                   target="_blank">
+                    WhatsApp
+                </a>
+
+            </div>
+        </div>
+
+
+        <div class="hero-box">
+            <h3>🏥</h3>
+            <h2>Your Health, Our Priority</h2>
+            <p>
+                Trusted medical care for you and your family.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <h2 class="section-title">About Our Hospital</h2>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <h2>Vaid Multispeciality Hospital</h2>
+
+                <p>
+                    Vaid Multispeciality Hospital is a healthcare
+                    facility serving patients in Siddhpur and
+                    surrounding areas.
+                </p>
+
+                <p>
+                    Our aim is to provide reliable, compassionate
+                    and patient-focused healthcare services.
+                </p>
+
+                <p>
+                    We provide consultation, diagnostic and
+                    surgical services through experienced medical
+                    professionals.
+                </p>
+
+            </div>
+
+            <div class="info-box">
+
+                <h3>Why Choose Us?</h3>
+
+                <p>✓ Experienced medical professionals</p>
+                <p>✓ Multispeciality healthcare</p>
+                <p>✓ Patient-focused treatment</p>
+                <p>✓ Modern medical facilities</p>
+                <p>✓ Convenient location in Siddhpur</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="container">
+
+        <h2 class="section-title">Our Services</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🦴</div>
+                <h3>Orthopedics</h3>
+                <p>
+                    Treatment for fractures, joint problems,
+                    knee and hip conditions.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">🩺</div>
+                <h3>General Medicine</h3>
+                <p>
+                    Consultation and treatment for common
+                    medical conditions.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">👨‍⚕️</div>
+                <h3>Urology</h3>
+                <p>
+                    Specialist consultation and treatment
+                    for urological conditions.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">🏥</div>
+                <h3>Surgery</h3>
+                <p>
+                    Surgical consultation and operative
+                    healthcare services.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">🩻</div>
+                <h3>X-Ray</h3>
+                <p>
+                    Diagnostic imaging services for
+                    medical evaluation.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">🚑</div>
+                <h3>Emergency Care</h3>
+                <p>
+                    Contact the hospital for emergency
+                    healthcare requirements.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DOCTORS -->
+
+<section id="doctors" class="about">
+
+    <div class="container">
+
+        <h2 class="section-title">Our Doctors</h2>
+
+        <div class="cards">
+
+            <div class="doctor-card">
+
+                <div class="doctor-photo">
+                    👨‍⚕️
+                </div>
+
+                <h3>Dr. Amit K. Vaid</h3>
+
+                <p>
+                    MS Ortho
+                </p>
+
+                <p>
+                    Orthopedics & Joint Replacement
+                </p>
+
+                <br>
+
+                <p>
+                    OPD: Daily<br>
+                    9:00 AM – 10:00 AM
+                </p>
+
+            </div>
+
+
+            <div class="doctor-card">
+
+                <div class="doctor-photo">
+                    👨‍⚕️
+                </div>
+
+                <h3>Dr. Jayesh Modi</h3>
+
+                <p>
+                    Urology
+                </p>
+
+                <p>
+                    Urology Consultation
+                </p>
+
+                <br>
+
+                <p>
+                    OPD timing can be updated here.
+                </p>
+
+            </div>
+
+
+            <div class="doctor-card">
+
+                <div class="doctor-photo">
+                    👨‍⚕️
+                </div>
+
+                <h3>Our Medical Team</h3>
+
+                <p>
+                    Experienced doctors and healthcare
+                    professionals.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GUJARATI -->
+
+<section class="gujarati">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            વૈદ મલ્ટીસ્પેશ્યાલિટી હોસ્પિટલ
+        </h2>
+
+        <p>
+            સિદ્ધપુરમાં ગુણવત્તાયુક્ત આરોગ્ય સેવાઓ
+            એક જ સ્થળે ઉપલબ્ધ.
+        </p>
+
+        <p>
+            ઓર્થોપેડિક્સ, જોઇન્ટ રીપ્લેસમેન્ટ, યુરોલોજી,
+            જનરલ મેડિસિન અને અન્ય તબીબી સેવાઓ.
+        </p>
+
+        <p>
+            દર્દીની સારી સારવાર અને સંભાળ અમારી
+            પ્રથમ પ્રાથમિકતા છે.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- APPOINTMENT -->
+
+<section class="appointment" id="appointment">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Book an Appointment
+        </h2>
+
+        <form class="form"
+              onsubmit="sendWhatsApp(event)">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Patient Name"
+                required>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Mobile Number"
+                required>
+
+            <select id="department" required>
+
+                <option value="">
+                    Select Department
+                </option>
+
+                <option>
+                    Orthopedics
+                </option>
+
+                <option>
+                    Joint Replacement
+                </option>
+
+                <option>
+                    Urology
+                </option>
+
+                <option>
+                    General Medicine
+                </option>
+
+                <option>
+                    Surgery
+                </option>
+
+            </select>
+
+            <input
+                type="date"
+                id="date"
+                required>
+
+            <textarea
+                id="message"
+                rows="4"
+                placeholder="Message / Problem">
+            </textarea>
+
+            <button type="submit">
+                Send Appointment Request
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Contact Us
+        </h2>
+
+        <div class="contact-grid">
+
+            <div class="contact-box">
+
+                <h3>Vaid Multispeciality Hospital</h3>
+
+                <p>
+                    📍 Dethali Chokdi, Siddhpur,
+                    Gujarat, India
+                </p>
+
+                <p>
+                    📞 <a href="tel:9316055188">
+                    9316055188
+                    </a>
+                </p>
+
+                <br>
+
+                <a class="call-btn buttons"
+                   href="tel:9316055188">
+                    Call Hospital
+                </a>
+
+                <br><br>
+
+                <a class="whatsapp-btn buttons"
+                   href="https://wa.me/919316055188"
+                   target="_blank">
+                    WhatsApp Hospital
+                </a>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>Find Us</h3>
+
+                <!-- Replace this map URL with your exact Google Maps location -->
+
+                <iframe
+                    class="map"
+                    src="https://www.google.com/maps?q=Siddhpur,Gujarat&output=embed"
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Vaid Multispeciality Hospital, Siddhpur
+    </p>
+
+    <p>
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+    document
+        .getElementById("nav")
+        .classList.toggle("active");
+
+}
+
+
+function sendWhatsApp(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value;
+
+    const phone =
+        document.getElementById("phone").value;
+
+    const department =
+        document.getElementById("department").value;
+
+    const date =
+        document.getElementById("date").value;
+
+    const message =
+        document.getElementById("message").value;
+
+
+    const text =
+        "🏥 Vaid Multispeciality Hospital%0A%0A" +
+
+        "Appointment Request%0A" +
+
+        "Patient Name: " + name + "%0A" +
+
+        "Mobile: " + phone + "%0A" +
+
+        "Department: " + department + "%0A" +
+
+        "Preferred Date: " + date + "%0A" +
+
+        "Problem: " + message;
+
+
+    window.open(
+        "https://wa.me/919316055188?text=" + text,
+        "_blank"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
